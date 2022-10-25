@@ -1,10 +1,14 @@
 import React from 'react';
+import Category from '../Category/Category';
+import ExploreCourse from '../ExploreCourse/ExploreCourse';
 import HomeHeader from '../HomeHeader/HomeHeader';
 
 const MainHome = () => {
     return (
-        <div className=' bg-gradient-to-r from-cyan-100 to-blue-200'>
+        <div className=' '>
             <HomeHeader />
+            <Category />
+            <ExploreCourse />
         </div>
     );
 };
