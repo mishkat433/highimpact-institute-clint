@@ -1,28 +1,29 @@
-// import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import React, { createContext, useState } from 'react';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import React, { createContext, useEffect, useState } from 'react';
+import app from '../Firebase/Firebase.config';
 
 
 export const AuthContex = createContext();
-// const auth = getAuth(applyActionCode);
+const auth = getAuth(app);
 
 const Contex = ({ children }) => {
 
-    const [user, setUser] = useState({});
+    const [loginUser, serLoginUser] = useState({});
     const [loading, setLoading] = useState(true);
 
-    // const logOut = () => {
-    //     signOut(auth)
-    // }
+    const logOut = () => {
+        signOut(auth)
+    }
 
-    // useEffect(() => {
-    //     const unsubscribe = onAuthStateChanged(auth, currentUser => {
-    //         setUser(currentUser);
-    //         setLoading(false);
-    //     })
-    //     return () => unsubscribe();
-    // }, [])
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            serLoginUser(currentUser);
+            setLoading(false);
+        })
+        return () => unsubscribe();
+    }, [])
 
-    const authInfo = { user, setUser, loading, setLoading, };
+    const authInfo = { loginUser, serLoginUser, loading, setLoading, logOut };
     return (
         <AuthContex.Provider value={authInfo}>
             {children}
