@@ -39,13 +39,15 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         loginUser?.uid ?
-                            <div className="dropdown dropdown-hover dropdown-left ">
+                            <div className="dropdown dropdown-hover dropdown-left">
                                 <div >
                                     <label tabIndex={0} className=" flex items-center gap-3">
-                                        <img className='w-10 rounded-full' src={loginUser?.photoURL ? loginUser?.photoURL : notFound} alt="User Photorul" />
+                                        <img className='w-10 rounded-full' src={loginUser?.photoURL ? loginUser?.photoURL : notFound} alt="User" />
                                         {/* <FaAngleDown /> */}
                                     </label>
                                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                        <li className='text-lg font-semibold'> {loginUser?.displayName}</li>
+                                        <li> {loginUser?.email}</li>
                                         <li><button onClick={logOut}>Log Out</button> </li>
 
                                     </ul>
@@ -56,7 +58,7 @@ const Navbar = () => {
                                 <NavLink className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined} to="/register">Register</NavLink>
                             </div>
                     }
-                    <label className="swap swap-rotate ml-3">
+                    <label className="swap swap-rotate ml-4">
 
                         <input type="checkbox" />
 
