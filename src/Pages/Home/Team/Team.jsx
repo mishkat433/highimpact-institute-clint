@@ -52,8 +52,6 @@ const Team = () => {
         ]
     };
 
-
-    console.log(team);
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
         return (
