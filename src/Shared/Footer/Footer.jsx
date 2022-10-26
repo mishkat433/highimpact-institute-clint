@@ -13,7 +13,7 @@ const Footer = () => {
                     <h1 className='text-4xl  w-2/5  font-crimos hidden lg:block'>Get our news first</h1>
 
                 </div>
-                <div className='grid grid-cols-1 lg:grid-cols-3 text-center md:justify-between gap-6'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 text-center md:text-left md:justify-between gap-6'>
                     <div >
                         <p >cell : <span className='text-gray-500'>+8801521xxxxxx</span></p>
                         <p>Email : <span className='text-gray-500'>mishkat433@gmail.com</span></p>
