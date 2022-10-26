@@ -6,6 +6,9 @@ import MainHome from '../Pages/Home/MainHome/MainHome';
 import Register from '../Pages/Register/Register';
 import NotFound from '../Pages/NotFound/NotFound';
 import Blog from '../Pages/Blog/Blog';
+// import Cources from '../Pages/Cources/Cources';
+import CourceLayout from '../Layout/CourceLayout';
+import Cources from '../Pages/Cources/Cources';
 
 export const routes = createBrowserRouter([
     {
@@ -35,5 +38,17 @@ export const routes = createBrowserRouter([
             },
 
         ]
+    },
+    {
+        path: "/cources",
+        element: <CourceLayout />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                path: "/cources",
+                element: <Cources />
+            }
+        ]
     }
+
 ])

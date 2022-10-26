@@ -1,13 +1,11 @@
 import React from 'react';
 
-const TeamCart = () => {
-
-
+const Cources = () => {
     return (
         <div>
-
+            ia am cources
         </div>
     );
 };
 
-export default TeamCart;
+export default Cources;
