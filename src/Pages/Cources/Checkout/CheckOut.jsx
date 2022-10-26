@@ -33,7 +33,7 @@ const CheckOut = () => {
     }
     console.log(loginUser);
     return (
-        <div className='w-11/12 mx-auto flex flex-col lg:flex-row gap-10 justify-around mt-10'>
+        <div className='w-11/12 mx-auto flex flex-col lg:flex-row gap-10 justify-around mt-10 pb-10'>
             <div className='w-full lg:w-2/5'>
                 <div className="hero lg:w-4/5 mx-auto">
                     <form onSubmit={checkoutHandle} className="card w-full shadow-2xl bg-base-100 ">

@@ -9,7 +9,7 @@ const CourcesCart = ({ course }) => {
             <div className="card-body bg-gradient-to-b from-cyan-100 to-blue-300">
                 <h2 className="card-title text-3xl mb-5">{title}</h2>
                 <p>{details.slice(0, 100)}...</p>
-                <div className="flex justify-between items-center text-xl mt-5">
+                <div className="flex justify-between flex-wrap items-center text-xl mt-5">
                     <h4>Price : {price} </h4>
                     <h4>Enrolled : {purchase}K </h4>
                     <h4>Duration : {duration} months </h4>

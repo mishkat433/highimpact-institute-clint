@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
     const [cources, setCources] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/cources")
+        fetch("https://high-impact-institute-server.vercel.app/cources")
             .then(res => res.json())
             .then(data => setCources(data))
     }, [])
     return (
         <div>
-            <p className='mb-3 my-5'>
+            <p className='mb-3 my-5 text-center lg:text-left'>
                 <Link to="/cources" className='pl-10 text-gray-200 text-xl font-semibold pt-5 hover:text-black'>All Cources</Link>
             </p>
 
@@ -18,7 +18,7 @@ const Sidebar = () => {
             {
                 cources.map(course =>
                     <div key={course.id}>
-                        <ul className=" pl-10 text-gray-200 text-xl font-semibold">
+                        <ul className=" pl-10 text-gray-200 text-xl font-semibold text-center lg:text-left">
 
                             <li className='mb-3 my-5 hover:text-black'><Link to={`/cources/details/${course.id}`}>{course.title}</Link> </li>
                         </ul>

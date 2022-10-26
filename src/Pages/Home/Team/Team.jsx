@@ -9,7 +9,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 const Team = () => {
     const [team, setTeam] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/team")
+        fetch("https://high-impact-institute-server.vercel.app/team")
             .then(res => res.json())
             .then(data => setTeam(data))
     }, [])
@@ -80,8 +80,12 @@ const Team = () => {
                 <h1 className='text-5xl font-semibold mb-5'>Meet Our Teem's</h1>
                 <p className='text-lg '>There are a wide range of different categories of article, broken down into subject matter and format.</p>
             </div>
+            {
+                team.length === 0 && <button className="btn loading">loading</button>
+            }
             <div>
                 <Slider {...settings} className="mt-10 py-5">
+
                     {
                         team.map(tem => <div key={tem.id} className="card card-compact w-32 shadow-xl bg-gradient-to-br from-cyan-100 to-blue-200">
                             <figure><img className=' h-[200px] mt-2' src={tem?.img} alt="Shoes" /></figure>

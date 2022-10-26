@@ -48,12 +48,12 @@ export const routes = createBrowserRouter([
             {
                 path: "/cources",
                 element: <Cources />,
-                loader: () => fetch("http://localhost:5000/cources")
+                loader: () => fetch("https://high-impact-institute-server.vercel.app/cources")
             },
             {
                 path: "/cources/details/:id",
                 element: <Details />,
-                loader: ({ params }) => fetch(`http://localhost:5000/cources/details/${params.id}`),
+                loader: ({ params }) => fetch(`https://high-impact-institute-server.vercel.app/cources/details/${params.id}`),
             },
             {
                 path: "/cources/checkout",
