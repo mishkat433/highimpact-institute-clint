@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
+import { FaDownload } from "react-icons/fa";
 const ref = React.createRef();
 
 const Details = () => {
     const singleCourse = useLoaderData();
-    const { title, details, image, price, duration, purchase, totalClass, id, facilities, use, time } = singleCourse;
-    console.log(singleCourse);
+    const { title, details, image, price, duration, purchase, totalClass, facilities, id, use, time } = singleCourse;
+
+    const checkoutHandle = () => {
+        localStorage.setItem("courseId", id)
+    }
+
     return (
         <div className='my-10 select-none'>
             <h1 className='mb-10 text-4xl text-center font-bold underline text-cyan-600'>Details</h1>
@@ -41,10 +46,10 @@ const Details = () => {
                     <div className='mt-5 flex justify-between'>
                         <button className=''>
                             <Pdf targetRef={ref} filename={`${title}.pdf`}>
-                                {({ toPdf }) => <button onClick={toPdf} className="btn btn-success md:px-20 gap-5">Download</button>}
+                                {({ toPdf }) => <button onClick={toPdf} className="btn btn-success md:px-20 gap-5">Download <FaDownload /> </button>}
                             </Pdf>
                         </button>
-                        <Link to="/cources/checkout" className='btn btn-primary md:px-20'>Get Premium Access </Link>
+                        <Link to="/cources/checkout" onClick={checkoutHandle} className='btn btn-primary md:px-20'>Get Premium Access </Link>
                     </div>
                 </div>
             </div >

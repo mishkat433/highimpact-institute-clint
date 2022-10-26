@@ -17,7 +17,7 @@ const Category = () => {
             {
                 categories.length === 0 && <button className="btn loading">loading</button>
             }
-            <div className='flex flex-col md:flex-row flex-wrap gap-5 mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10'>
                 {
                     categories.map(category => <CategoryCart category={category} key={category.id} />)
                 }

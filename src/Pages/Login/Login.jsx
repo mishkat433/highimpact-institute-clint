@@ -13,8 +13,8 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
     const loginHandle = (e) => {
-        if (formData.email && formData.password) {
-            userLogin(formData.email, formData.password)
+        if (formData?.email && formData?.password) {
+            userLogin(formData?.email, formData?.password)
                 .then(result => {
                     if (result.user) {
                         Swal.fire({

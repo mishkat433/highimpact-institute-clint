@@ -7,7 +7,6 @@ export const AuthContex = createContext();
 const auth = getAuth(app);
 
 const Contex = ({ children }) => {
-
     const [loginUser, serLoginUser] = useState({});
     const [loading, setLoading] = useState(true);
 

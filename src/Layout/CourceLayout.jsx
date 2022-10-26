@@ -8,7 +8,7 @@ const CourceLayout = () => {
     return (
         <div className='bg-gradient-to-r from-cyan-100 to-blue-200'>
             <Navbar />
-            <div className='flex flex-col flex-wrap lg:flex-row w-11/12 mx-auto gap-10 '>
+            <div className='flex flex-col lg:flex-row w-11/12 mx-auto gap-10 '>
                 <div className='w-full lg:w-1/5 bg-blue-500 lg:h-screen lg:sticky top-0'>
                     <Sidebar />
                 </div>

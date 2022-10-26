@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import Authentication from '../../Authentication/Authentication';
 import Swal from 'sweetalert2';
@@ -12,9 +12,9 @@ const Register = () => {
     const { email, password, confirm, name, photo } = formData;
     const [error, setError] = useState("")
 
-    // const navigate = useNavigate()
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const googleLoginHandle = () => {
         googleSigninHandle()
@@ -27,7 +27,7 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 setError(err.message)
@@ -43,7 +43,7 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
                 setError('')
             })
             .catch(err => {
@@ -52,15 +52,23 @@ const Register = () => {
     }
 
     const registerHandle = (e) => {
+        console.log(photo);
         if (email) {
             if (password === confirm) {
                 setError("")
                 createUser(email, password, name, photo)
                     .then(result => {
-                        console.log(result);
-                        updateuser(name, email);
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'successfully login',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        updateuser(name, photo);
                         emailVerify();
-                        // navigate(from, { replace: true })
+                        setError('')
+                        navigate(from, { replace: true })
                     })
                     .catch(err => {
                         setError(err.message)

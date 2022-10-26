@@ -5,7 +5,6 @@ import logo from "../../Image/logo.png";
 import notFound from "../../Image/notFoundImage.png";
 const Navbar = () => {
     const { loginUser, logOut } = useContext(AuthContex)
-    console.log(loginUser);
     return (
         <div className=' bg-base-200' >
             <div className="navbar w-11/12 mx-auto">
