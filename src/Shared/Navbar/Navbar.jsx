@@ -6,7 +6,7 @@ import notFound from "../../Image/notFoundImage.png";
 const Navbar = () => {
     const { loginUser, logOut } = useContext(AuthContex)
     return (
-        <div className=' bg-base-200' >
+        <div className='bg-gradient-to-r from-cyan-100 to-blue-200' >
             <div className="navbar w-11/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">

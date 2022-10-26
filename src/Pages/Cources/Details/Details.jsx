@@ -46,7 +46,7 @@ const Details = () => {
                     <div className='mt-5 flex justify-between'>
                         <button className=''>
                             <Pdf targetRef={ref} filename={`${title}.pdf`}>
-                                {({ toPdf }) => <button onClick={toPdf} className="btn btn-success md:px-20 gap-5">Download <FaDownload /> </button>}
+                                {({ toPdf }) => <button onClick={toPdf} className="btn btn-success md:px-20 gap-5 text-white">Download <FaDownload /> </button>}
                             </Pdf>
                         </button>
                         <Link to="/cources/checkout" onClick={checkoutHandle} className='btn btn-primary md:px-20'>Get Premium Access </Link>

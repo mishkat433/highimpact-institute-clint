@@ -103,7 +103,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero h-screen bg-transparent bg-gradient-to-t from-blue-300 to-cyan-300 ">
+        <div className="hero h-screen bg-transparent bg-gradient-to-b from-blue-200 to-cyan-200 ">
             <div>
                 <h1 className="text-3xl my-2 font-bold text-gray-500">Login now!</h1>
                 {error && <h1 className='text-red-500 text-center'>{error}</h1>}

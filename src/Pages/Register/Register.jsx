@@ -104,7 +104,7 @@ const Register = () => {
     }
 
     return (
-        <div className="hero h-full h-screen bg-transparent bg-gradient-to-t from-blue-300 to-cyan-300 pb-10" >
+        <div className="hero h-full h-screen bg-transparent bg-gradient-to-b from-blue-200 to-cyan-200 py-5" >
             <div>
                 <h1 className="text-3xl my-2 font-bold text-gray-500">Register now!</h1>
                 {error && <h1 className='text-red-500 mt-10 text-center'>{error}</h1>}

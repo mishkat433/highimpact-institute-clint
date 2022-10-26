@@ -9,7 +9,7 @@ const Sidebar = () => {
             .then(data => setCources(data))
     }, [])
     return (
-        <div>
+        <div className='select-none'>
             <p className='mb-3 my-5 text-center lg:text-left'>
                 <Link to="/cources" className='pl-10 text-gray-200 text-xl font-semibold pt-5 hover:text-black'>All Cources</Link>
             </p>
