@@ -10,6 +10,7 @@ import Cources from '../Pages/Cources/Cources';
 import Details from '../Pages/Cources/Details/Details';
 import CheckOut from '../Pages/Cources/Checkout/CheckOut';
 import PrivateRoute from '../Authentication/PrivateRoute';
+import FAQ from '../Pages/FAQ/FAQ';
 
 export const routes = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ export const routes = createBrowserRouter([
             {
                 path: "/blog",
                 element: <Blog />,
+            },
+            {
+                path: "/faq",
+                element: <FAQ />,
             },
             {
                 path: "/login",
