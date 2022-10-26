@@ -119,7 +119,9 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
+
                             <input onChange={formHandle} name="password" type="password" placeholder="password" className="input input-bordered" />
+                            <p className='text-green-600 mb-2'>must be use uppercase, lowercase, number</p>
                             <label >
                                 Don't have an account?<Link to="/register" className="text-md link link-hover"> Please register</Link>
                             </label>
