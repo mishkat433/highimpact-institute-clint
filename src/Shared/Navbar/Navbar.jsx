@@ -17,8 +17,8 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined}>Home</NavLink></li>
                             <li><NavLink to="/rooms" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined}>Cources</NavLink></li>
-                            <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined}>FAQ</NavLink></li>
-                            <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined}>Blog</NavLink></li>
+                            <li><NavLink to="/faq" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined}>FAQ</NavLink></li>
+                            <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold" : undefined}>Blog</NavLink></li>
                         </ul>
                     </div>
                     <Link to="/" className=" flex gap-3 items-center">
@@ -31,8 +31,8 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0">
                         <li><NavLink to="/home" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold mx-1" : undefined}>Home</NavLink></li>
                         <li><NavLink to="/rooms" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold mx-1" : undefined}>Cources</NavLink></li>
-                        <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold mx-1" : undefined}>FAQ</NavLink></li>
-                        <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold mx-1" : undefined}>Blog</NavLink></li>
+                        <li><NavLink to="/faq" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold mx-1" : undefined}>FAQ</NavLink></li>
+                        <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-cyan-700 font-semibold mx-1" : undefined}>Blog</NavLink></li>
 
                     </ul>
                 </div>

@@ -5,6 +5,7 @@ import MainLayout from '../Layout/MainLayout';
 import MainHome from '../Pages/Home/MainHome/MainHome';
 import Register from '../Pages/Register/Register';
 import NotFound from '../Pages/NotFound/NotFound';
+import Blog from '../Pages/Blog/Blog';
 
 export const routes = createBrowserRouter([
     {
@@ -20,10 +21,10 @@ export const routes = createBrowserRouter([
                 path: "/home",
                 element: <MainHome />,
             },
-            // {
-            //     path: "/blog",
-            //     element: <Blog />,
-            // },
+            {
+                path: "/blog",
+                element: <Blog />,
+            },
             {
                 path: "/login",
                 element: <Login />,
@@ -32,11 +33,7 @@ export const routes = createBrowserRouter([
                 path: "/register",
                 element: <Register />,
             },
-            // {
-            //     path: "/news/:id",
-            //     loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`),
-            //     element: <News />,
-            // },
+
         ]
     }
 ])
