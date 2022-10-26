@@ -52,34 +52,28 @@ const Register = () => {
     }
 
     const registerHandle = (e) => {
-        console.log(photo);
-        if (email) {
-            if (password === confirm) {
-                setError("")
-                createUser(email, password, name, photo)
-                    .then(result => {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'successfully login',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        updateuser(name, photo);
-                        emailVerify();
-                        setError('')
-                        navigate(from, { replace: true })
+        if (password === confirm) {
+            setError("")
+            createUser(email, password, name, photo)
+                .then(result => {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'successfully login',
+                        showConfirmButton: false,
+                        timer: 1500
                     })
-                    .catch(err => {
-                        setError(err.message)
-                    })
-            }
-            else {
-                setError("Password didn't match")
-            }
+                    updateuser(name, photo);
+                    emailVerify();
+                    setError('')
+                    navigate(from, { replace: true })
+                })
+                .catch(err => {
+                    setError(err.message)
+                })
         }
         else {
-            setError("Please provide a valid  email")
+            setError("Password didn't match")
         }
         e.preventDefault()
     }
@@ -88,12 +82,24 @@ const Register = () => {
         let isValid = true
         if (ev.target.name === "email") {
             isValid = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(ev.target.value)
+            setError("")
+        }
+        else {
+            setError("enter valid email")
         }
         if (ev.target.name === "password") {
             isValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(ev.target.value)
+            setError("")
+        }
+        else {
+            setError("password must be uppercase, lowercase, number")
         }
         if (ev.target.name === "confirm") {
             isValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(ev.target.value);
+            setError('')
+        }
+        else {
+            setError("password must be uppercase, lowercase, number")
         }
 
         if (isValid) {
@@ -133,6 +139,7 @@ const Register = () => {
                                 <span className="label-text">password*</span>
                             </label>
                             <input onChange={formHandle} name="password" type="password" placeholder="A12345b" className="input input-bordered" required />
+                            <p className='text-green-600'>must be use uppercase, lowercase, number</p>
                         </div>
                         <div className="form-control">
                             <label className="label">
