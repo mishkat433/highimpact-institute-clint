@@ -10,13 +10,19 @@ const Sidebar = () => {
     }, [])
     return (
         <div>
+            <p className='mb-3 my-5'>
+                <Link to="/cources" className='pl-10 text-gray-200 text-xl font-semibold pt-5 hover:text-black'>All Cources</Link>
+            </p>
+
+            <hr />
             {
                 cources.map(course =>
                     <div key={course.id}>
                         <ul className=" pl-10 text-gray-200 text-xl font-semibold">
-                            <li className='mb-3 my-5 hover:text-black'><Link to={`/cources/details/${cources.id}`}>{course.title}</Link> </li>
+
+                            <li className='mb-3 my-5 hover:text-black'><Link to={`/cources/details/${course.id}`}>{course.title}</Link> </li>
                         </ul>
-                        <hr className='' />
+                        <hr />
                     </div>
                 )
             }
