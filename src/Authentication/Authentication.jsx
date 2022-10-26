@@ -1,6 +1,5 @@
 import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import { useContext } from 'react';
-// import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../Contex/Contex';
 import app from '../Firebase/Firebase.config';
 
@@ -9,13 +8,8 @@ const auth = getAuth(app);
 const Authentication = () => {
     const { setLoading } = useContext(AuthContex)
 
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || "/";
-
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
-
-    // const navigate = useNavigate();
 
     const googleSigninHandle = () => {
         setLoading(true)

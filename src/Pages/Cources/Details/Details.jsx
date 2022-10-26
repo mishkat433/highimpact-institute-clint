@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaShoppingBag } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import Pdf from "react-to-pdf";
 const ref = React.createRef();
@@ -45,7 +44,7 @@ const Details = () => {
                                 {({ toPdf }) => <button onClick={toPdf} className="btn btn-success px-20 gap-5">Download</button>}
                             </Pdf>
                         </button>
-                        <Link to={`/cources/details/${id}`} className='btn btn-primary px-20'>Purchase <FaShoppingBag className='ml-5' /> </Link>
+                        <Link to="/cources/checkout" className='btn btn-primary px-20'>Get Premium Access </Link>
                     </div>
                 </div>
             </div >

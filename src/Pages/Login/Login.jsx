@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; import { FaGoogle, FaGithub } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from 'react-router-dom'; import { FaGoogle, FaGithub } from "react-icons/fa";
 import Authentication from '../../Authentication/Authentication';
 import Swal from 'sweetalert2';
 
@@ -7,17 +7,16 @@ const Login = () => {
     const { googleSigninHandle, githubSignInHandle, userLogin, resetHandle } = Authentication();
     const [formData, setFormData] = useState({})
     const [error, setError] = useState("")
-    // const location = useLocation();
-    // const navigate = useNavigate()
+    const location = useLocation();
+    const navigate = useNavigate()
 
-    // const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/";
 
     const loginHandle = (e) => {
         if (formData.email && formData.password) {
             userLogin(formData.email, formData.password)
                 .then(result => {
                     if (result.user) {
-                        // navigate(from, { replace: true })
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -25,6 +24,7 @@ const Login = () => {
                             showConfirmButton: false,
                             timer: 1500
                         })
+                        navigate(from, { replace: true })
                     }
                     setError('')
                 })
@@ -47,7 +47,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 setError(err.message)
@@ -64,7 +64,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
                 setError('')
             })
             .catch(err => {

@@ -8,6 +8,8 @@ import Blog from '../Pages/Blog/Blog';
 import CourceLayout from '../Layout/CourceLayout';
 import Cources from '../Pages/Cources/Cources';
 import Details from '../Pages/Cources/Details/Details';
+import CheckOut from '../Pages/Cources/Checkout/CheckOut';
+import PrivateRoute from '../Authentication/PrivateRoute';
 
 export const routes = createBrowserRouter([
     {
@@ -52,6 +54,10 @@ export const routes = createBrowserRouter([
                 path: "/cources/details/:id",
                 element: <Details />,
                 loader: ({ params }) => fetch(`http://localhost:5000/cources/details/${params.id}`),
+            },
+            {
+                path: "/cources/checkout",
+                element: <PrivateRoute><CheckOut /></PrivateRoute>,
             }
         ]
     }
