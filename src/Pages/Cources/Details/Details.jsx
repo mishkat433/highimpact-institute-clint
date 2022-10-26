@@ -1,5 +1,8 @@
 import React from 'react';
+import { FaShoppingBag } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const Details = () => {
     const singleCourse = useLoaderData();
@@ -8,11 +11,10 @@ const Details = () => {
     return (
         <div className='my-10 select-none'>
             <h1 className='text-center text-4xl mb-5'>Detalis</h1>
-            <div className="card  bg-base-100 shadow-xl bg-gradient-to-t from-cyan-100 to-blue-300">
+            <div className="card  bg-base-100 shadow-xl bg-gradient-to-t from-cyan-100 to-blue-300" ref={ref}>
                 <h2 className="card-title text-3xl my-5 ml-8">{title}</h2>
                 <figure><img className='w-full' src={image} alt="Shoes" /></figure>
                 <div className="card-body ">
-
                     <p className='text-gray-700'>{details}</p>
                     <div className="flex justify-between items-center text-xl mt-5 text-lime-700">
                         <h4>Price : {price} </h4>
@@ -24,7 +26,6 @@ const Details = () => {
                     <div className='mt-5'>
                         <h1 className='text-xl font-semibold text-center underline'>Our Facilities</h1>
                         <ul className='flex flex-wrap justify-between mt-2 items-center text-lg'>
-
                             {
                                 facilities.map(flts => <li> {flts} | </li>)
                             }
@@ -32,15 +33,19 @@ const Details = () => {
                     </div>
                     <div className='mt-5'>
                         <h1 className='text-xl font-semibold text-center underline'>Why you learn {title}</h1>
-                        <ul className='flex flex-col text-center gap-y-3 mt-2 flex-wrap gap-3  text-xl'>
-
+                        <ul className='flex flex-col  gap-y-3 mt-2 flex-wrap gap-3 px-4 text-xl'>
                             {
-                                use.map(us => <li className=''>{us}</li>)
+                                use.map(us => <li className='list-decimal pl-2'>{us}</li>)
                             }
                         </ul>
                     </div>
-                    <div className='mt-5'>
-                        <Link to={`/cources/details/${id}`} className='btn btn-primary w-full'>Details</Link>
+                    <div className='mt-5 flex justify-between'>
+                        <button className=''>
+                            <Pdf targetRef={ref} filename={`${title}.pdf`}>
+                                {({ toPdf }) => <button onClick={toPdf} className="btn btn-success px-20 gap-5">Download</button>}
+                            </Pdf>
+                        </button>
+                        <Link to={`/cources/details/${id}`} className='btn btn-primary px-20'>Purchase <FaShoppingBag className='ml-5' /> </Link>
                     </div>
                 </div>
             </div >
