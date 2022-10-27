@@ -8,10 +8,11 @@ const Login = () => {
     const [formData, setFormData] = useState({})
     const [error, setError] = useState("")
     const location = useLocation();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || "/";
 
+    // login with email and password
     const loginHandle = (e) => {
         if (formData?.email && formData?.password) {
             userLogin(formData?.email, formData?.password)
@@ -36,6 +37,7 @@ const Login = () => {
         e.preventDefault()
     }
 
+    // google login
     const googleLoginHandle = () => {
         googleSigninHandle()
             .then(result => {
@@ -54,6 +56,7 @@ const Login = () => {
             })
     }
 
+    // github login
     const githubLoginHandle = () => {
         githubSignInHandle()
             .then(result => {
@@ -72,6 +75,7 @@ const Login = () => {
             })
     }
 
+    // Forget password
     const forgetPassword = () => {
         resetHandle(formData.email)
             .then(result => {
@@ -87,6 +91,7 @@ const Login = () => {
             .catch(err => setError(err.message))
     }
 
+    // form validation and handle
     const formHandle = (ev) => {
         let isValid = false
         if (ev.target.name === "email") {

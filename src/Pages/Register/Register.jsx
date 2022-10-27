@@ -10,12 +10,13 @@ const Register = () => {
     const { googleSigninHandle, githubSignInHandle, createUser, updateuser, emailVerify } = Authentication();
     const [formData, setFormData] = useState({});
     const { email, password, confirm, name, photo } = formData;
-    const [error, setError] = useState("")
+    const [error, setError] = useState("");
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    // google login
     const googleLoginHandle = () => {
         googleSigninHandle()
             .then(result => {
@@ -33,6 +34,8 @@ const Register = () => {
                 setError(err.message)
             })
     }
+
+    // github login
     const githubLoginHandle = () => {
         githubSignInHandle()
             .then(result => {
@@ -51,6 +54,7 @@ const Register = () => {
             })
     }
 
+    // create use with email and password 
     const registerHandle = (e) => {
         if (password === confirm) {
             setError("")
@@ -78,6 +82,7 @@ const Register = () => {
         e.preventDefault()
     }
 
+    // form validation and handle
     const formHandle = (ev) => {
         let isValid = true
         if (ev.target.name === "email") {
