@@ -29,7 +29,7 @@ const Authentication = () => {
     }
 
     // create user with email and password
-    const createUser = (email, password, name, photo) => {
+    const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
 
     }

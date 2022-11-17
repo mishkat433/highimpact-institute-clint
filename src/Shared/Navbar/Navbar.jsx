@@ -47,7 +47,6 @@ const Navbar = () => {
                                         <li className='text-lg font-semibold'> {loginUser?.displayName}</li>
                                         <li> {loginUser?.email}</li>
                                         <li><button onClick={logOut}>Log Out</button> </li>
-
                                     </ul>
                                 </div>
                             </div>
